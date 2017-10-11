@@ -3,3 +3,9 @@
 ################################################################################
 
 /src/.vs/TimeZoneConversion/v15
+/src/packages
+/src/TimeZoneConversion/bin/Debug
+/src/TimeZoneConversion/obj/Debug
+/src/TimeZoneConversion.Android/bin/Debug
+/src/TimeZoneConversion.Android/obj
+/src/TimeZoneConversion.iOS/obj/iPhone/Debug

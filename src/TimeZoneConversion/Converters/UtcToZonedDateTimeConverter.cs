@@ -19,9 +19,6 @@ namespace TimeZoneConversion.Converters
                 return value;
             }
 
-            var dateTime = (TimeZoneInfo.ConvertTime(DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc), TimeZoneInfo.FindSystemTimeZoneById));
-
-
             var timeZone = DateTimeZoneProviders.Tzdb[(string)parameter];
             var utcDateTime = DateTime.SpecifyKind((DateTime)value, DateTimeKind.Utc);
             var zonedDateTime = Instant.FromDateTimeUtc(utcDateTime).InZone(timeZone).ToDateTimeUnspecified();
