@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeZoneConversion.MainPage"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=Main}" 
+             xmlns:converters="clr-namespace:TimeZoneConversion.Converters;assembly=TimeZoneConversion">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+
+        <converters:UtcToZonedDateTimeConverter x:Key="UtcToZonedDateTimeConverter" />
+
+    </ResourceDictionary>
+</ContentPage.Resources>
+
+<Label Text="{Binding Time, 
+       StringFormat='Time: {0:MM/dd/yyyy hh:mm tt}', 
+       Converter={StaticResource UtcToZonedDateTimeConverter},
+       ConverterParameter='America/Chicago'}"
+       HorizontalOptions="Center" VerticalOptions="Center"></Label>
+
+</ContentPage>
